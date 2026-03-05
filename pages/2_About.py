@@ -1,6 +1,6 @@
 """
-About — Background, Skills & Contact
-=====================================
+About: Background, Skills and Contact
+======================================
 """
 
 import streamlit as st
@@ -8,7 +8,7 @@ from components.styles import get_global_css
 from data_loader import load_projects
 
 st.set_page_config(
-    page_title="About — David Maco Portfolio",
+    page_title="About: David Igbonaju Portfolio",
     page_icon="👤",
     layout="wide",
 )
@@ -38,7 +38,7 @@ st.markdown(
     <div class="detail-section">
         <p style="font-size: 0.95rem; color: #334155; line-height: 1.8;">
             I build end-to-end analytics platforms that help procurement and supply chain teams
-            make better decisions with data. My work spans the full stack — from MySQL schema
+            make better decisions with data. My work spans the full stack, from MySQL schema
             design and ETL pipelines through Monte Carlo simulation engines and ML risk models,
             to executive dashboards in Streamlit and Power BI.
         </p>
@@ -102,9 +102,9 @@ principles = [
     ("🎯", "Business-First Design",
      "Analytics exist to drive decisions. Every dashboard page, every metric, every model output connects to a specific business action."),
     ("🔍", "Transparent Methodology",
-     "Every number in every report traces to source code. No black boxes — stakeholders can verify methodology and assumptions."),
+     "Every number in every report traces to source code. No black boxes. Stakeholders can verify methodology and assumptions."),
     ("🏷️", "Evidence Classification",
-     "Every output carries explicit data provenance tags: simulated_estimate → pilot_observed → production_realized."),
+     "Every output carries explicit data provenance tags: simulated estimate, then pilot observed, then production realized."),
     ("✅", "Production Quality",
      "Typed contracts (Pydantic), comprehensive test suites (500+ tests across portfolio), CI/CD pipelines, Docker deployment, and security scanning."),
 ]
@@ -152,15 +152,15 @@ st.markdown(
         <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
             <div>
                 <div style="font-size: 0.75rem; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Email</div>
-                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">david.maco@email.com</div>
+                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">david.igbonaju@email.com</div>
             </div>
             <div>
                 <div style="font-size: 0.75rem; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">GitHub</div>
-                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">github.com/davidmaco</div>
+                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">github.com/DavidMaco</div>
             </div>
             <div>
                 <div style="font-size: 0.75rem; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">LinkedIn</div>
-                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">linkedin.com/in/davidmaco</div>
+                <div style="font-size: 0.95rem; color:#0066CC; font-weight:500;">linkedin.com/in/david-igbonaju-a202821a0</div>
             </div>
         </div>
     </div>
@@ -172,7 +172,7 @@ st.markdown(
 st.markdown(
     """
     <div class="footer">
-        Portfolio of David Maco · Data & Analytics Engineer<br>
+        Portfolio of David Igbonaju · Data and Analytics Engineer<br>
         All project metrics derived from documented methodologies · 2026
     </div>
     """,

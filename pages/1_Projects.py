@@ -1,6 +1,6 @@
 """
-Projects — Full Catalog + Detail Views
-=======================================
+Projects: Full Catalog and Detail Views
+========================================
 Browse all projects with filtering, or view detailed breakdowns.
 """
 
@@ -10,7 +10,7 @@ from components.project_card import render_project_card, render_project_detail
 from data_loader import load_projects, get_project_by_id, get_domains
 
 st.set_page_config(
-    page_title="Projects — David Maco Portfolio",
+    page_title="Projects: David Igbonaju Portfolio",
     page_icon="📂",
     layout="wide",
 )

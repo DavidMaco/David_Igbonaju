@@ -1,13 +1,13 @@
 """
-Portfolio Website — Homepage
+Portfolio Website: Homepage
 ============================
-Professional landing page showcasing projects built by David Maco.
+Professional landing page showcasing projects built by David Igbonaju.
 """
 
 import streamlit as st
 
 st.set_page_config(
-    page_title="David Maco — Portfolio",
+    page_title="David Igbonaju Portfolio",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -26,9 +26,9 @@ with st.sidebar:
     st.markdown(
         """
         <div style="font-size:0.85rem; color:#64748B; line-height:1.8;">
-            <strong>Home</strong> — You are here<br>
-            <strong>Projects</strong> — Full catalog + detail views<br>
-            <strong>About</strong> — Background & contact
+            <strong>Home</strong>: You are here<br>
+            <strong>Projects</strong>: Browse all projects and detail views<br>
+            <strong>About</strong>: Background and contact info
         </div>
         """,
         unsafe_allow_html=True,
@@ -47,11 +47,11 @@ projects = load_projects()
 st.markdown(
     f"""
     <div class="hero-container">
-        <div class="hero-title">David Maco</div>
+        <div class="hero-title">David Igbonaju</div>
         <div class="hero-subtitle">
-            Data & Analytics Engineer building investment-grade procurement intelligence
-            platforms — from Monte Carlo simulations and ML risk models to full-stack
-            executive dashboards. Every project here solves a real business problem
+            Data and Analytics Engineer building investment-grade procurement intelligence
+            platforms. From Monte Carlo simulations and ML risk models to full-stack
+            executive dashboards, every project here solves a real business problem
             with production-quality code, transparent methodology, and quantified outcomes.
         </div>
         <div class="hero-stats">
@@ -141,7 +141,7 @@ for col, (icon, title, desc) in zip(expertise_cols, expertise):
 st.markdown(
     """
     <div class="footer">
-        Portfolio of David Maco · Data & Analytics Engineer<br>
+        Portfolio of David Igbonaju · Data and Analytics Engineer<br>
         All project metrics derived from documented methodologies · 2026
     </div>
     """,

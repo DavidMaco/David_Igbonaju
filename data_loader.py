@@ -1,5 +1,5 @@
 """
-Data loader — reads curated project metadata from YAML.
+Data loader: reads curated project metadata from YAML.
 """
 
 import os

@@ -16,9 +16,9 @@
     Decisions are made on incomplete data spread across siloed ERPs, spreadsheets,
     and manual reports.
   solution_summary: >
-    AEGIS integrates 16 analytics engines — including Monte Carlo simulation,
+    AEGIS integrates 16 analytics engines, including Monte Carlo simulation,
     MCDA supplier scoring (TOPSIS, PROMETHEE-II), game-theoretic negotiation,
-    digital-twin supply-chain simulation, and NLP spend classification — over a
+    digital-twin supply-chain simulation, and NLP spend classification, over a
     normalized 40+ table MySQL schema with star-schema warehouse ETL, surfaced
     through a 12-page Streamlit dashboard and a 27-endpoint FastAPI REST API
     with JWT + API-key authentication.
@@ -99,7 +99,7 @@
     - Docker / Docker Compose
     - GitHub Actions CI/CD
   key_features:
-    - "Live demo on Streamlit Cloud with Aiven MySQL — all 8 pages fully interactive"
+    - "Live demo on Streamlit Cloud with Aiven MySQL. All 8 pages are fully interactive"
     - "Regime-weighted Monte Carlo with configurable horizon (30–1,095 days)"
     - "Auto-generated per-supplier negotiation action playbooks"
     - "Interactive company data upload with full pipeline re-run"
@@ -217,9 +217,9 @@
   icon: "🔮"
   color: "#DC2626"
   problem_statement: >
-    Traditional procurement systems are reactive — they detect problems only after
-    delays occur. Production stoppages cost ₦2–5M/day, rush-order premiums add
-    30–50%, and inventory imbalances cascade without advance warning.
+    Traditional procurement systems are reactive. They detect problems only after
+    delays occur. Production stoppages cost up to 5M NGN per day, rush-order premiums add
+    30 to 50 percent, and inventory imbalances cascade without advance warning.
   solution_summary: >
     A predictive analytics pipeline using Random Forest classification on 18
     engineered features combining supplier health metrics, daily external risk
@@ -267,9 +267,9 @@
   color: "#F59E0B"
   problem_statement: >
     Enterprise procurement teams need executive-grade BI dashboards backed by a
-    robust SQL Server data platform, but building the full stack from scratch —
-    normalized OLTP, star-schema warehouse, analytics procedures, and Power BI
-    semantic layer — is time-intensive and error-prone.
+    robust SQL Server data platform, but building the full stack from scratch
+    (normalized OLTP, star-schema warehouse, analytics procedures, and Power BI
+    semantic layer) is time-intensive and error-prone.
   solution_summary: >
     A complete SQL Server implementation with 12 SQL scripts covering 19 OLTP tables,
     star-schema warehouse, composite supplier risk scoring, Monte Carlo FX simulation
@@ -298,7 +298,7 @@
     - "11 Power BI semantic views with 20+ pre-built DAX measures"
     - "Monte Carlo FX simulation via SQL Server ML Services"
     - "SQL Agent nightly automation (ETL + risk + simulation)"
-    - "Idempotent DDL — safe to rerun all scripts"
+    - "Idempotent DDL: safe to rerun all scripts"
   status: "Production-Ready"
   highlights:
     semantic_views: "11"

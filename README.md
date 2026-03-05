@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Professional portfolio showcasing data & analytics engineering projects — built with Streamlit.
+Professional portfolio showcasing data and analytics engineering projects, built with Streamlit.
 
 ## Quick Start
 
@@ -39,7 +39,7 @@ portfolio-site/
 
 All project content lives in `data/projects.yml`. To add or update a project:
 
-1. Edit `data/projects.yml` — add a new entry following the existing schema
+1. Edit `data/projects.yml` to add a new entry following the existing schema
 2. Restart the Streamlit app (or it hot-reloads automatically in dev)
 
 Fields per project: `id`, `title`, `tagline`, `domain`, `icon`, `color`, `problem_statement`, `solution_summary`, `business_impact`, `architecture_summary`, `stack`, `key_features`, `status`, `highlights`, `repo_url`, `demo_url`.
@@ -51,7 +51,7 @@ Fields per project: `id`, `title`, `tagline`, `domain`, `icon`, `color`, `proble
 3. Select the repo, branch, and set **Main file path** to `app.py`
 4. Deploy
 
-Environment requirements are in `requirements.txt` — no secrets or database needed.
+Environment requirements are in `requirements.txt`. No secrets or database needed.
 
 ## Customization
 
