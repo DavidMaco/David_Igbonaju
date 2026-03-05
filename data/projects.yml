@@ -1,0 +1,358 @@
+# ============================================================
+# PORTFOLIO PROJECT METADATA
+# Single source of truth for all portfolio website content.
+# All figures are quoted directly from project documentation.
+# ============================================================
+
+- id: aegis-procurement
+  title: "AEGIS: Adaptive Engine for Global Intelligent Sourcing"
+  tagline: "Investment-grade procurement analytics platform combining 16 analytics engines, a 40+ table MySQL schema, REST API, and 12-page executive dashboard."
+  domain: "Procurement Analytics"
+  icon: "🏛️"
+  color: "#0066CC"
+  problem_statement: >
+    Procurement organizations lack a unified system to quantify supplier risk,
+    FX exposure, ESG compliance, and cost leakage across global supply chains.
+    Decisions are made on incomplete data spread across siloed ERPs, spreadsheets,
+    and manual reports.
+  solution_summary: >
+    AEGIS integrates 16 analytics engines — including Monte Carlo simulation,
+    MCDA supplier scoring (TOPSIS, PROMETHEE-II), game-theoretic negotiation,
+    digital-twin supply-chain simulation, and NLP spend classification — over a
+    normalized 40+ table MySQL schema with star-schema warehouse ETL, surfaced
+    through a 12-page Streamlit dashboard and a 27-endpoint FastAPI REST API
+    with JWT + API-key authentication.
+  business_impact:
+    - "7-dimension composite risk scoring across Financial, Operational, Geopolitical, Compliance, Concentration, ESG, and Cyber"
+    - "10,000-path Geometric Brownian Motion Monte Carlo for FX risk with P5–P95 bands and VaR"
+    - "GHG Protocol Scope 3 carbon tracking with GLEC Framework emission factors"
+    - "HHI concentration analysis across 5 dimensions (Supplier, Country, Currency, Material, Port)"
+    - "Should-cost models with leakage flags at 5%, 15%, and 25% thresholds"
+  architecture_summary: >
+    Data flows from ERP/PO/FX sources through a 14-step seed data generator into a
+    30+ table OLTP layer, then through star-schema ETL (SCD Type 2) into a dimensional
+    warehouse, consumed by 16 analytics engines. Results surface via a 12-page Streamlit
+    dashboard, 27-endpoint FastAPI REST API, and Power BI semantic views.
+  stack:
+    - Python 3.11+
+    - MySQL 8.0
+    - Streamlit
+    - FastAPI
+    - SQLAlchemy
+    - NumPy / pandas
+    - Plotly
+    - Docker / Docker Compose
+    - GitHub Actions CI/CD
+    - JWT + API-key Auth
+  key_features:
+    - "TOPSIS + PROMETHEE-II multi-criteria supplier scoring with interactive weight sliders"
+    - "Game-theoretic negotiation engine (Nash bargaining, Vickrey/first-price auctions)"
+    - "Digital-twin supply-chain simulation with multi-scenario Monte Carlo"
+    - "RL-based inventory allocation (tabular Q-learning) and GenAI copilot"
+    - "~335 pytest tests (0 require database), CI with security scanning"
+  status: "Production-Ready (Pilot)"
+  highlights:
+    engines: "16"
+    tables: "40+"
+    api_endpoints: "27"
+    tests: "335"
+  repo_url: ""
+  demo_url: ""
+
+- id: procurement-intelligence-engine
+  title: "PVIS: Procurement Volatility Intelligence System"
+  tagline: "Procurement analytics platform combining regime-weighted Monte Carlo FX simulation, composite supplier risk scoring, and working capital optimization."
+  domain: "Procurement Analytics"
+  icon: "📊"
+  color: "#00A86B"
+  problem_statement: >
+    Manufacturing procurement teams face three critical blind spots: FX volatility
+    (a 15% NGN devaluation can wipe out ₦180M+ in margin), supplier risk (late
+    deliveries cascade into production stoppages), and cash leakage (cost variances
+    against standard costs go undetected across 1,000+ PO lines).
+  solution_summary: >
+    PVIS implements regime-weighted Monte Carlo FX simulation (10K–50K paths over
+    up to 1,095 trading days) with live dual-API FX failover, a 6-factor composite
+    supplier risk scoring model, cost leakage detection, and CCC optimization.
+    Surfaced through an 8-page interactive Streamlit dashboard with full demo mode
+    and a Power BI decision layer.
+  business_impact:
+    - "Regime-weighted Monte Carlo simulation with 10K–50K GBM paths, P5/P50/P95 bands, VaR/CVaR"
+    - "6-factor composite supplier risk scoring (OTD, defects, cost variance, FX sensitivity, lead-time, geographic)"
+    - "Live FX monitoring for 150+ currencies with dual-API failover"
+    - "Cost leakage detection via unit-price vs. standard-cost variance by category"
+    - "Cash Conversion Cycle optimization with DIO/DPO modeling"
+  architecture_summary: >
+    Three-tier architecture: ingestion layer (live FX APIs, CSV upload, 3-year seed
+    generator) feeding a 19-table MySQL OLTP store and star-schema warehouse,
+    processed by an analytics engine (Monte Carlo FX, composite risk, spend
+    aggregation, working capital KPIs), presented in an 8-page Streamlit dashboard
+    with Plotly charts and a Power BI semantic SQL view layer.
+  stack:
+    - Python 3.13+
+    - MySQL 8.0
+    - Aiven MySQL (Cloud)
+    - Streamlit 1.54
+    - SQLAlchemy + PyMySQL
+    - NumPy / pandas
+    - Plotly
+    - Docker / Docker Compose
+    - GitHub Actions CI/CD
+  key_features:
+    - "Live demo on Streamlit Cloud with Aiven MySQL — all 8 pages fully interactive"
+    - "Regime-weighted Monte Carlo with configurable horizon (30–1,095 days)"
+    - "Auto-generated per-supplier negotiation action playbooks"
+    - "Interactive company data upload with full pipeline re-run"
+    - "Demo Mode operates with full functionality without database"
+  status: "Production-Ready"
+  highlights:
+    pages: "8"
+    tables: "19"
+    fx_currencies: "150+"
+    monte_carlo_paths: "50K"
+  repo_url: ""
+  demo_url: "https://davidmaco-pvis.streamlit.app"
+
+- id: tco-comparison-model
+  title: "TCO Comparison Model"
+  tagline: "Investment-grade Total Cost of Ownership analysis for machines, equipment, and spares sourced from China, India, and Europe."
+  domain: "Procurement Analytics / Capital Equipment"
+  icon: "⚙️"
+  color: "#8B5CF6"
+  problem_statement: >
+    Capital equipment sourcing decisions across emerging and developed markets are
+    driven by unit price, ignoring the 60–80% of lifecycle cost hidden in
+    installation, maintenance, spares logistics, FX risk, and operational downtime.
+  solution_summary: >
+    An 8-layer deterministic TCO calculator with 10,000-path lognormal Monte Carlo
+    simulation, a 6-scenario macro stress-test engine, NPV/IRR/EBITDA financial
+    translation, weighted supplier scorecards, and prescriptive optimization.
+    Every output carries evidence classification tags.
+  business_impact:
+    - "Full 8-layer lifecycle cost visibility by region"
+    - "Monte Carlo risk banding with P5–P95 uncertainty quantification (10,000 paths)"
+    - "NPV, IRR, EBITDA impact, and working capital drag per sourcing option"
+    - "6 macro scenario stress tests (base, optimistic, pessimistic, regulatory shock, supply disruption, market volatility)"
+    - "Prescriptive maintenance scheduling, EOQ inventory, and make-vs-buy recommendations"
+  architecture_summary: >
+    Equipment specs and supplier data flow through a validation layer into an
+    8-layer deterministic TCO engine, then through Monte Carlo simulation and
+    scenario stress-testing. Results feed financial translation and supplier
+    scorecards, converging into prescriptive optimization surfaced via a multi-page
+    Streamlit dashboard and an 11-endpoint FastAPI REST API.
+  stack:
+    - Python 3.10+
+    - NumPy / SciPy / pandas
+    - Streamlit / Plotly
+    - FastAPI / Pydantic v2
+    - MySQL (star schema) / SQLAlchemy
+    - Docker / Docker Compose
+    - pytest (80 tests)
+  key_features:
+    - "8-layer deterministic TCO (Acquisition → Installation → Operating → Maintenance → Spares → Risk → Utilization → Residual)"
+    - "Evidence classification system (simulated_estimate → pilot_observed → production_realized)"
+    - "6+ macro scenario stress engine with FX shock, tariff, energy, disruption vectors"
+    - "Financial translation: NPV, IRR, EBITDA impact, lifecycle cashflow"
+    - "11-endpoint FastAPI REST API with auth and rate limiting"
+  status: "Production-Ready (Pilot)"
+  highlights:
+    tco_layers: "8"
+    monte_carlo_paths: "10K"
+    scenarios: "6"
+    tests: "80"
+  repo_url: ""
+  demo_url: ""
+
+- id: sustainability-roi-calculator
+  title: "Sustainability ROI Calculator for Manufacturing"
+  tagline: "Convert sustainable procurement into a defensible business case with quantified financial and environmental outcomes."
+  domain: "Sustainability / Green Procurement"
+  icon: "🌿"
+  color: "#059669"
+  problem_statement: >
+    Sustainability programs are approved on policy grounds but stall at budget
+    review. Organizations need measurable financial and environmental outcomes
+    that decision-makers can evaluate directly, particularly in Nigerian FMCG
+    manufacturing where budget justification is critical.
+  solution_summary: >
+    A decision-support analytics platform quantifying procurement cost increase,
+    carbon reduction, operational savings, net annual ROI, and payback period for
+    switching to sustainable materials. Built with seed-based deterministic
+    execution, Pydantic typed contracts, and a pluggable DataAdapter abstraction.
+  business_impact:
+    - "~82% carbon reduction quantified under demonstration assumptions"
+    - "Net annual ROI calculated with full cost-benefit breakdown"
+    - "Operational savings breakdown: Carbon Tax Avoidance + Water Savings + Waste Savings"
+    - "Configurable economic parameters (carbon tax, water cost, waste cost)"
+  architecture_summary: >
+    Streamlit UI atop a pure domain calculation layer (models, materials, scenarios,
+    recommendations), fed by a pluggable ingestion layer (DataAdapter abstraction
+    with CSV/JSON adapter). A pipeline runner orchestrates batch execution, producing
+    generated artifacts in the data directory.
+  stack:
+    - Python 3.12+
+    - Streamlit
+    - Plotly
+    - Pydantic
+    - pytest (21 tests)
+    - GitHub Actions CI/CD
+  key_features:
+    - "Seed-based deterministic execution for full reproducibility"
+    - "Pydantic typed contracts enforcing data integrity across all layers"
+    - "Pluggable DataAdapter interface (CSV, databases, APIs, cloud stores)"
+    - "Custom Scenario Builder for real-time procurement mix tuning"
+    - "Production guard: runtime assumption guardrails"
+  status: "Pilot-Ready"
+  highlights:
+    carbon_reduction: "82%"
+    tests: "21"
+    data_adapters: "Pluggable"
+  repo_url: ""
+  demo_url: ""
+
+- id: supply-chain-disruption-predictor
+  title: "Supply Chain Disruption Predictor"
+  tagline: "Machine learning early warning system that forecasts delivery delays and scores supplier risk for FMCG manufacturing."
+  domain: "Supply Chain / Predictive Analytics"
+  icon: "🔮"
+  color: "#DC2626"
+  problem_statement: >
+    Traditional procurement systems are reactive — they detect problems only after
+    delays occur. Production stoppages cost ₦2–5M/day, rush-order premiums add
+    30–50%, and inventory imbalances cascade without advance warning.
+  solution_summary: >
+    A predictive analytics pipeline using Random Forest classification on 18
+    engineered features combining supplier health metrics, daily external risk
+    factors (rainfall, fuel, FX, port congestion), and operational signals.
+    Produces per-order late-delivery probabilities, supplier risk scorecards,
+    and scenario-based business impact estimates.
+  business_impact:
+    - "Model accuracy: 54.5%, Recall (Late): 63.2%, ROC-AUC: 0.540"
+    - "Scenario-based savings estimate: ₦36.8M potential (70% mitigation on ₦875.2M exposed value)"
+    - "Risk classification: Low (<30%), Medium (30–60%), High (>60%) tiers"
+    - "18 engineered features including rolling averages and composite risk"
+  architecture_summary: >
+    Two-stage pipeline: data generation produces date-aligned external risk factors
+    and supplier health metrics, which are joined and feature-engineered into an
+    18-feature ML-ready dataset. ML training pipeline performs 80/20 split, trains
+    balanced Random Forest, and outputs predictions, scorecards, and impact estimates.
+    All artifacts are SHA-256 fingerprinted.
+  stack:
+    - Python 3.10+
+    - scikit-learn
+    - pandas / NumPy
+    - PyYAML
+    - joblib
+    - pytest (15 tests)
+    - GitHub Actions CI
+  key_features:
+    - "18 engineered features (rolling averages, late delivery rates, composite risk)"
+    - "Claim validation system mapping every README figure to artifact evidence"
+    - "SHA-256 reproducibility fingerprints for full traceability"
+    - "Configurable assumptions via single config.yaml"
+    - "Multi-version CI matrix (Python 3.10, 3.11, 3.12)"
+  status: "MVP"
+  highlights:
+    features: "18"
+    tests: "15"
+    roc_auc: "0.540"
+  repo_url: ""
+  demo_url: ""
+
+- id: pvis-powerbi
+  title: "PVIS Power BI Decision Layer"
+  tagline: "Enterprise procurement analytics with SQL Server, Power BI semantic layer, Monte Carlo FX simulation, and one-click PowerShell deployment."
+  domain: "Business Intelligence"
+  icon: "📈"
+  color: "#F59E0B"
+  problem_statement: >
+    Enterprise procurement teams need executive-grade BI dashboards backed by a
+    robust SQL Server data platform, but building the full stack from scratch —
+    normalized OLTP, star-schema warehouse, analytics procedures, and Power BI
+    semantic layer — is time-intensive and error-prone.
+  solution_summary: >
+    A complete SQL Server implementation with 12 SQL scripts covering 19 OLTP tables,
+    star-schema warehouse, composite supplier risk scoring, Monte Carlo FX simulation
+    via ML Services, 11 Power BI semantic views, and SQL Agent automation. Includes
+    PowerShell one-click deployment, DAX measure library, and corporate Power BI theme.
+  business_impact:
+    - "10 suppliers scored across 6 weighted risk factors with automated classification"
+    - "FX exposure analysis: 60–80% of suppliers use non-USD currencies"
+    - "3-year historical data: ~500 POs, 15 materials, 8 currency daily FX rates"
+    - "CCC optimization: 15–25 days identified as optimizable"
+    - "One-click deployment: 30–60 seconds via PowerShell"
+  architecture_summary: >
+    SQL Server database with 19 normalized OLTP tables feeding a star-schema
+    warehouse (dim_date, dim_supplier, dim_material, fact_procurement). Analytics
+    stored procedures compute risk scores and run Monte Carlo FX simulation.
+    11 semantic views expose curated datasets for Power BI. SQL Agent nightly
+    jobs automate ETL, risk, and simulation refreshes.
+  stack:
+    - SQL Server
+    - T-SQL
+    - Power BI (DAX)
+    - PowerShell
+    - Python (ML Services)
+  key_features:
+    - "One-click PowerShell deployment (Deploy-PVIS.ps1)"
+    - "11 Power BI semantic views with 20+ pre-built DAX measures"
+    - "Monte Carlo FX simulation via SQL Server ML Services"
+    - "SQL Agent nightly automation (ETL + risk + simulation)"
+    - "Idempotent DDL — safe to rerun all scripts"
+  status: "Production-Ready"
+  highlights:
+    semantic_views: "11"
+    dax_measures: "20+"
+    deployment: "One-click"
+    tables: "19"
+  repo_url: ""
+  demo_url: ""
+
+- id: procurement-spend-analysis
+  title: "Procurement Spend Analysis & Supplier Optimization"
+  tagline: "End-to-end analytics pipeline transforming procurement data into quantified savings actions with executive-ready reporting."
+  domain: "Spend Analytics / Optimization"
+  icon: "💰"
+  color: "#7C3AED"
+  problem_statement: >
+    Procurement teams have strong transactional records but weak decision intelligence.
+    Spend leakage, supplier risk, price variances, and maverick buying go undetected
+    across thousands of purchase orders, leaving significant savings unrealized.
+  solution_summary: >
+    An end-to-end Python + SQLite pipeline generating realistic FMCG procurement
+    transactions, building a query-optimized analytical data store, quantifying
+    spend leakage and risk, running score-based supplier allocation optimization,
+    and producing sensitivity scenarios with executive reports in Markdown, HTML,
+    and PDF.
+  business_impact:
+    - "Total analyzed spend: NGN 310.39B"
+    - "Total savings opportunity: NGN 185.92B (59.90% of spend)"
+    - "Price standardization opportunity: NGN 18.45B"
+    - "Supplier performance opportunity: NGN 167.47B"
+    - "Maverick spend exposure: NGN 40.61B (13.08%)"
+  architecture_summary: >
+    Data generation produces synthetic procurement data (2,500 POs, 40 suppliers,
+    71 materials). SQLite store with analytical views provides query-optimized access.
+    Analytics engine computes KPIs and savings opportunities. Optimization engine runs
+    score-based supplier allocation. Scenario analysis performs sensitivity modeling.
+    Outputs flow to JSON, CSV, and executive reports.
+  stack:
+    - Python 3.10+
+    - SQLite
+    - pandas
+    - pytest
+    - GitHub Actions CI
+  key_features:
+    - "Five decision domains: spend visibility, supplier performance, price variance, maverick buying, FX exposure"
+    - "Score-based supplier allocation optimization"
+    - "Conservative/base/aggressive scenario sensitivity analysis"
+    - "Executive reporting in Markdown, HTML, and PDF"
+    - "Power BI handoff pack with DAX measures and dashboard structure"
+  status: "Production-Style Portfolio"
+  highlights:
+    spend_analyzed: "₦310B"
+    savings: "₦186B"
+    suppliers: "40"
+    purchase_orders: "2,500"
+  repo_url: ""
+  demo_url: ""
