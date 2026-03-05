@@ -56,8 +56,8 @@
     tables: "40+"
     api_endpoints: "27"
     tests: "335"
-  repo_url: ""
-  demo_url: ""
+  repo_url: "https://github.com/DavidMaco/Supplier_Selection_Project"
+  demo_url: "https://supplierselectionproject.streamlit.app/"
   dashboard_pages:
     - page: "Supplier Risk Scorecard"
       icon: "🎯"
@@ -131,8 +131,8 @@
     tables: "19"
     fx_currencies: "150+"
     monte_carlo_paths: "50K"
-  repo_url: ""
-  demo_url: "https://davidmaco-pvis.streamlit.app"
+  repo_url: "https://github.com/DavidMaco/pvis"
+  demo_url: "https://davidmaco-pvis.streamlit.app/"
   dashboard_pages:
     - page: "FX Volatility Dashboard"
       icon: "💱"
@@ -198,8 +198,8 @@
     monte_carlo_paths: "10K"
     scenarios: "6"
     tests: "80"
-  repo_url: ""
-  demo_url: ""
+  repo_url: "https://github.com/DavidMaco/TCO_Comparison_Model"
+  demo_url: "https://tcocomparisonmodel.streamlit.app/"
   dashboard_pages:
     - page: "8-Layer TCO Breakdown"
       icon: "📊"
@@ -262,8 +262,8 @@
     carbon_reduction: "82%"
     tests: "21"
     data_adapters: "Pluggable"
-  repo_url: ""
-  demo_url: ""
+  repo_url: "https://github.com/DavidMaco/sustainability_ROI_calculator"
+  demo_url: "https://sustainability-roi-calculator.streamlit.app/"
   dashboard_pages:
     - page: "ROI Summary Dashboard"
       icon: "🌿"
@@ -324,7 +324,7 @@
     features: "18"
     tests: "15"
     roc_auc: "0.540"
-  repo_url: ""
+  repo_url: "https://github.com/DavidMaco/Supplychain_Disruption_Predictor"
   demo_url: ""
   dashboard_pages:
     - page: "Late Delivery Risk Forecast"
@@ -386,7 +386,7 @@
     dax_measures: "20+"
     deployment: "One-click"
     tables: "19"
-  repo_url: ""
+  repo_url: "https://github.com/DavidMaco/PVIS_SQL_powerBI"
   demo_url: ""
   dashboard_pages:
     - page: "Executive Overview (Power BI)"
@@ -452,7 +452,7 @@
     savings: "₦186B"
     suppliers: "40"
     purchase_orders: "2,500"
-  repo_url: ""
+  repo_url: "https://github.com/DavidMaco/Procurement_Spend_Analysis"
   demo_url: ""
   dashboard_pages:
     - page: "Spend Visibility Dashboard"
