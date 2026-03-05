@@ -58,6 +58,27 @@
     tests: "335"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "Supplier Risk Scorecard"
+      icon: "🎯"
+      description: "TOPSIS + PROMETHEE-II composite scores across 7 risk dimensions with interactive weight sliders, ranked supplier table, and HHI concentration heat map."
+      key_metrics: ["7-Dimension Score", "HHI Index", "ESG Rating", "Cyber Risk Level"]
+    - page: "FX Monte Carlo Forecast"
+      icon: "📉"
+      description: "10,000-path GBM simulation with P5/P50/P95 FX bands, VaR (95%), CVaR, and configurable horizon sliders from 30 to 1,095 days."
+      key_metrics: ["P95 Exposure", "VaR (95%)", "CVaR", "GBM Volatility"]
+    - page: "Spend Intelligence & Leakage"
+      icon: "💸"
+      description: "Spend cube with should-cost leakage flags at 5/15/25% thresholds, category heatmaps, maverick buy exposure, and supplier concentration analysis."
+      key_metrics: ["Leakage %", "Should-Cost Gap", "Maverick Buy", "Concentration HHI"]
+    - page: "Supply Chain Digital Twin"
+      icon: "🔗"
+      description: "Multi-scenario simulation of lead times, disruption probabilities, port congestion impacts, and optimal reorder points with inventory KPIs."
+      key_metrics: ["Disruption Prob.", "Lead Time P95", "Safety Stock", "Reorder Point"]
+    - page: "GenAI Procurement Copilot"
+      icon: "🤖"
+      description: "RL-based inventory allocation (tabular Q-learning) combined with natural language procurement recommendations and scenario decision support."
+      key_metrics: ["Q-Value Convergence", "Allocation Score", "Reorder Signal", "Action Plan"]
 
 - id: procurement-intelligence-engine
   title: "PVIS: Procurement Volatility Intelligence System"
@@ -112,6 +133,23 @@
     monte_carlo_paths: "50K"
   repo_url: ""
   demo_url: "https://davidmaco-pvis.streamlit.app"
+  dashboard_pages:
+    - page: "FX Volatility Dashboard"
+      icon: "💱"
+      description: "Regime-weighted Monte Carlo with 50K GBM paths, live FX monitoring for 150+ currencies, configurable horizon, and P5/P50/P95 exposure bands."
+      key_metrics: ["P95 FX Exposure", "VaR (95%)", "Regime Weight", "Live Rate"]
+    - page: "Supplier Risk Matrix"
+      icon: "⚠️"
+      description: "6-factor composite scoring across OTD, defect rate, cost variance, FX sensitivity, lead-time, and geographic risk with auto-generated negotiation playbooks."
+      key_metrics: ["Composite Score", "OTD Rate", "Defect PPM", "FX Sensitivity"]
+    - page: "Cost Leakage Analyzer"
+      icon: "🔍"
+      description: "Unit price vs. standard cost variance flagging across 1,000+ PO lines, category-level leakage heatmap, and drill-down to individual purchase orders."
+      key_metrics: ["Leakage %", "Price Variance", "Category Risk", "PO Exposure"]
+    - page: "Working Capital Optimizer"
+      icon: "🏦"
+      description: "Cash Conversion Cycle decomposition with DIO/DPO/DSO sliders, automated supplier term negotiation playbooks, and working capital KPI dashboard."
+      key_metrics: ["CCC Days", "DIO", "DPO", "Optimizable Days"]
 
 - id: tco-comparison-model
   title: "TCO Comparison Model"
@@ -162,6 +200,23 @@
     tests: "80"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "8-Layer TCO Breakdown"
+      icon: "📊"
+      description: "Waterfall chart showing lifecycle cost layers from Acquisition through Residual Value per supplier region, with percentage breakdown by layer."
+      key_metrics: ["Total TCO", "Acquisition %", "Maintenance %", "Residual Value"]
+    - page: "Monte Carlo Risk Bands"
+      icon: "📉"
+      description: "10,000-path lognormal simulation with P5/P95 uncertainty bounds per TCO layer per region, highlighting where cost variance is highest."
+      key_metrics: ["P95 TCO", "Uncertainty Range", "Most-Likely Cost", "Worst-Case"]
+    - page: "Macro Scenario Stress Test"
+      icon: "⚡"
+      description: "6 macro scenarios (FX shock, tariff escalation, energy crisis, supply disruption, market volatility, regulatory) with NPV, IRR, and EBITDA impact."
+      key_metrics: ["NPV Delta", "IRR Impact", "EBITDA Hit", "Break-Even"]
+    - page: "Supplier Scorecard"
+      icon: "🏆"
+      description: "Weighted multi-criteria procurement scorecard ranking suppliers across cost competitiveness, quality, lead time, risk, ESG, and after-sales support."
+      key_metrics: ["Composite Score", "Cost Rank", "Quality Rank", "Risk Rating"]
 
 - id: sustainability-roi-calculator
   title: "Sustainability ROI Calculator for Manufacturing"
@@ -209,6 +264,19 @@
     data_adapters: "Pluggable"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "ROI Summary Dashboard"
+      icon: "🌿"
+      description: "Net annual ROI, payback period, lifetime NPV, and full cost-benefit breakdown for switching to sustainable materials in FMCG manufacturing."
+      key_metrics: ["Net ROI %", "Payback (Years)", "Carbon Reduction", "Net Annual Saving"]
+    - page: "Carbon Reduction Model"
+      icon: "🌍"
+      description: "GHG emission comparison between conventional and sustainable material mixes with Scope 3 breakdown and carbon tax avoidance calculation."
+      key_metrics: ["CO2 Reduction", "Scope 3 Saving", "Carbon Tax Offset", "EF Factor"]
+    - page: "Scenario Builder"
+      icon: "🎛️"
+      description: "Interactive procurement mix sliders with real-time ROI recalculation, sensitivity display, and configurable economic parameters (carbon tax, water cost)."
+      key_metrics: ["Mix %", "Cost Delta", "Carbon Delta", "Break-Even Point"]
 
 - id: supply-chain-disruption-predictor
   title: "Supply Chain Disruption Predictor"
@@ -258,6 +326,19 @@
     roc_auc: "0.540"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "Late Delivery Risk Forecast"
+      icon: "🔮"
+      description: "Per-order late-delivery probability scores using 18 engineered features. Risk tier classification (Low/Medium/High) with decision thresholds at 30% and 60%."
+      key_metrics: ["Delay Probability", "Risk Tier", "ROC-AUC: 0.54", "Recall (Late): 63%"]
+    - page: "Supplier Risk Scorecards"
+      icon: "📋"
+      description: "Supplier-level aggregated risk scores with OTD history, rolling feature trends, and feature importance breakdown per supplier over the trailing 30 days."
+      key_metrics: ["Supplier Score", "OTD Rate", "Feature Rank", "30-Day Trend"]
+    - page: "Business Impact Estimator"
+      icon: "💰"
+      description: "Scenario-based cost model converting delay probability to NGN financial exposure, estimated mitigation savings, and gross benefit of early warning action."
+      key_metrics: ["₦ Exposed Value", "Mitigation Saving", "Confidence Interval", "Alert Threshold"]
 
 - id: pvis-powerbi
   title: "PVIS Power BI Decision Layer"
@@ -307,6 +388,23 @@
     tables: "19"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "Executive Overview (Power BI)"
+      icon: "📈"
+      description: "KPI cards, spend trend sparklines, supplier health gauges, and period-over-period variance using 20+ pre-built DAX measures refreshed nightly by SQL Agent."
+      key_metrics: ["Total Spend", "At-Risk Suppliers", "FX Exposure %", "CCC Days"]
+    - page: "FX Exposure Report"
+      icon: "💱"
+      description: "Monte Carlo FX simulation executed via SQL Server ML Services, visualized in Power BI with P5/P95 scenario bands and currency concentration charts."
+      key_metrics: ["FX P95 Band", "Currency Mix %", "VaR", "Hedge Gap"]
+    - page: "Supplier Risk Matrix (BI)"
+      icon: "⚠️"
+      description: "6-factor risk scoring surfaced through Power BI semantic layer with slicers, drill-through to PO level, and automated risk-tier classification."
+      key_metrics: ["Composite Score", "OTD %", "Defect Rate", "Risk Tier"]
+    - page: "Spend Intelligence BI"
+      icon: "💸"
+      description: "Category spend heatmaps, price variance waterfall, maverick buy exposure flag, and leakage analysis delivered through semantic SQL views to Power BI."
+      key_metrics: ["Category Spend", "Variance %", "Maverick Buy", "Leakage Flag"]
 
 - id: procurement-spend-analysis
   title: "Procurement Spend Analysis & Supplier Optimization"
@@ -356,3 +454,20 @@
     purchase_orders: "2,500"
   repo_url: ""
   demo_url: ""
+  dashboard_pages:
+    - page: "Spend Visibility Dashboard"
+      icon: "💰"
+      description: "Category spend breakdown, supplier concentration HHI, period-over-period trend, and top spend drivers across ₦310.39B in analyzed procurement data."
+      key_metrics: ["₦310.39B Total", "Top Category %", "HHI Index", "Trend Direction"]
+    - page: "Savings Opportunity Map"
+      icon: "🎯"
+      description: "₦185.92B in identified savings decomposed across price standardization (₦18.45B), supplier performance (₦167.47B), and maverick buying (₦40.61B)."
+      key_metrics: ["₦185.92B Savings", "Price Gap %", "Perf. Gap %", "Maverick %"]
+    - page: "Supplier Optimization"
+      icon: "🏆"
+      description: "Score-based allocation model ranking 40 suppliers across OTIF, quality, price competitiveness, and risk with optimal spend reallocation recommendations."
+      key_metrics: ["Top Supplier Score", "Allocation Shift", "Risk-Adjusted Rank", "40 Suppliers"]
+    - page: "Scenario Analysis"
+      icon: "⚡"
+      description: "Conservative, base, and aggressive savings scenarios with sensitivity modeling, assumption documentation, and executive narrative report in Markdown/HTML/PDF."
+      key_metrics: ["Conservative", "Base Case", "Aggressive", "Confidence Band"]

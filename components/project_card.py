@@ -189,6 +189,41 @@ def render_project_detail(project: dict):
             unsafe_allow_html=True,
         )
 
+    # ── Dashboard Preview ──
+    dashboard_pages = project.get("dashboard_pages", [])
+    if dashboard_pages:
+        st.markdown(
+            """
+            <div class="detail-section">
+                <div class="detail-section-title">🖥️ Dashboard Pages</div>
+                <div style="font-size:0.8rem; color:#64748B; margin-bottom:0.8rem;">
+                    Key screens and analytical panels in this project's dashboard.
+                </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        dp_cols = st.columns(min(len(dashboard_pages), 2))
+        for i, page in enumerate(dashboard_pages):
+            chips_html = "".join(
+                f'<span class="dp-chip">{m}</span>'
+                for m in page.get("key_metrics", [])
+            )
+            with dp_cols[i % 2]:
+                st.markdown(
+                    f"""
+                    <div class="dp-card">
+                        <div class="dp-card-top">
+                            <div class="dp-icon">{page.get('icon', '📄')}</div>
+                            <div class="dp-page-name">{page.get('page', '')}</div>
+                        </div>
+                        <div class="dp-desc">{page.get('description', '')}</div>
+                        <div class="dp-metrics">{chips_html}</div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+        st.markdown("</div>", unsafe_allow_html=True)
+
     # ── Data Transparency Note ──
     st.markdown(
         """
