@@ -271,10 +271,10 @@ st.markdown(
             discuss procurement analytics? I would love to hear from you.
         </p>
         <div class="contact-items">
-            <a class="contact-card" href="mailto:davidigbonaju@email.com">
+            <a class="contact-card" href="mailto:davidigbonaju@gmail.com">
                 <div class="contact-icon">✉️</div>
                 <div class="contact-label">Email</div>
-                <div class="contact-value">davidigbonaju@email.com</div>
+                <div class="contact-value">davidigbonaju@gmail.com</div>
             </a>
             <a class="contact-card" href="https://github.com/DavidMaco" target="_blank">
                 <div class="contact-icon">💻</div>
