@@ -19,6 +19,11 @@ def get_global_css() -> str:
             max-width: 1200px;
         }
 
+        /* ── Smooth transitions on everything ── */
+        *, *::before, *::after {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         /* ── Hero Section ── */
         .hero-container {
             background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #0d2847 100%);
@@ -27,6 +32,7 @@ def get_global_css() -> str:
             margin-bottom: 2.5rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         .hero-container::before {
             content: '';
@@ -37,6 +43,7 @@ def get_global_css() -> str:
             height: 500px;
             background: radial-gradient(circle, rgba(0,102,204,0.15) 0%, transparent 70%);
             border-radius: 50%;
+            animation: hero-orb-float 18s ease-in-out infinite alternate;
         }
         .hero-container::after {
             content: '';
@@ -47,6 +54,12 @@ def get_global_css() -> str:
             height: 400px;
             background: radial-gradient(circle, rgba(0,168,107,0.1) 0%, transparent 70%);
             border-radius: 50%;
+            animation: hero-orb-float 22s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes hero-orb-float {
+            0%   { transform: translate(0, 0) scale(1); }
+            50%  { transform: translate(-40px, 25px) scale(1.08); }
+            100% { transform: translate(30px, -15px) scale(0.95); }
         }
         .hero-title {
             font-size: 2.8rem;
@@ -79,6 +92,7 @@ def get_global_css() -> str:
             font-size: 2rem;
             font-weight: 700;
             color: #60A5FA;
+            text-shadow: 0 0 30px rgba(96,165,250,0.25);
         }
         .hero-stat-label {
             font-size: 0.8rem;
@@ -95,7 +109,8 @@ def get_global_css() -> str:
             color: #1A1A2E;
             margin: 2rem 0 0.5rem 0;
             padding-bottom: 0.5rem;
-            border-bottom: 3px solid #0066CC;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #0066CC, #00A86B) 1;
             display: inline-block;
         }
         .section-subheader {
@@ -111,14 +126,32 @@ def get_global_css() -> str:
             border-radius: 12px;
             padding: 1.8rem;
             margin-bottom: 1.2rem;
-            transition: all 0.25s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
         }
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -120%;
+            width: 60%; height: 100%;
+            background: linear-gradient(
+                105deg,
+                transparent 40%,
+                rgba(0,102,204,0.03) 45%,
+                rgba(0,102,204,0.06) 50%,
+                rgba(0,102,204,0.03) 55%,
+                transparent 60%
+            );
+            transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card:hover::after {
+            left: 130%;
+        }
         .project-card:hover {
             border-color: #0066CC;
-            box-shadow: 0 4px 20px rgba(0,102,204,0.1);
-            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,102,204,0.12), 0 2px 8px rgba(0,0,0,0.06);
+            transform: translateY(-4px);
         }
         .project-card-accent {
             position: absolute;
@@ -217,10 +250,21 @@ def get_global_css() -> str:
         /* ── Detail View ── */
         .detail-header {
             background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2.5rem 2rem;
             margin-bottom: 2rem;
             color: white;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+        .detail-header::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(0,102,204,0.12), transparent 70%);
+            border-radius: 50%;
         }
         .detail-title {
             font-size: 2rem;
@@ -235,9 +279,13 @@ def get_global_css() -> str:
         .detail-section {
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1rem;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .detail-section:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
         }
         .detail-section-title {
             font-size: 1rem;
@@ -287,6 +335,7 @@ def get_global_css() -> str:
             flex-wrap: wrap;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         .profile-hero::before {
             content: '';
@@ -296,6 +345,7 @@ def get_global_css() -> str:
             width: 400px; height: 400px;
             background: radial-gradient(circle, rgba(0,102,204,0.18) 0%, transparent 70%);
             border-radius: 50%;
+            animation: hero-orb-float 20s ease-in-out infinite alternate;
         }
         .profile-avatar-col {
             display: flex;
@@ -392,10 +442,11 @@ def get_global_css() -> str:
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.2rem;
-            transition: box-shadow 0.2s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .domain-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
         }
         .domain-card-icon {
             width: 44px; height: 44px;
@@ -430,19 +481,29 @@ def get_global_css() -> str:
         .philosophy-card {
             background: #FAFBFF;
             border: 1px solid #E2E8F0;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 1.3rem 1.4rem;
             margin-bottom: 1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .philosophy-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
         }
 
         /* ── Glance Cards ── */
         .glance-card {
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
-            border-radius: 12px;
-            padding: 1.2rem 0.8rem;
+            border-radius: 14px;
+            padding: 1.4rem 0.8rem;
             text-align: center;
             margin-bottom: 0.8rem;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glance-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
         }
         .glance-value {
             font-size: 1.8rem;
@@ -461,10 +522,11 @@ def get_global_css() -> str:
         .contact-section {
             background: linear-gradient(135deg, #F8FAFF 0%, #F0F7FF 100%);
             border: 1px solid #DBEAFE;
-            border-radius: 14px;
-            padding: 2rem 2rem 2rem 2rem;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
             text-align: center;
             margin-top: 0.5rem;
+            box-shadow: 0 8px 32px rgba(0,102,204,0.06);
         }
         .contact-intro {
             font-size: 0.97rem;
@@ -482,17 +544,18 @@ def get_global_css() -> str:
         .contact-card {
             background: #FFFFFF;
             border: 1px solid #DBEAFE;
-            border-radius: 12px;
-            padding: 1.1rem 1.5rem;
+            border-radius: 14px;
+            padding: 1.3rem 1.5rem;
             text-decoration: none;
-            min-width: 160px;
-            transition: box-shadow 0.2s ease, transform 0.15s ease;
+            min-width: 170px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: block;
         }
         .contact-card:hover {
-            box-shadow: 0 4px 16px rgba(0,102,204,0.12);
-            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0,102,204,0.14);
+            transform: translateY(-4px);
             text-decoration: none;
+            border-color: #93C5FD;
         }
         .contact-icon { font-size: 1.6rem; margin-bottom: 0.3rem; }
         .contact-label {
@@ -519,14 +582,16 @@ def get_global_css() -> str:
         .dp-card {
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
-            border-radius: 10px;
-            padding: 1.1rem 1.2rem;
+            border-radius: 12px;
+            padding: 1.2rem 1.3rem;
             position: relative;
             overflow: hidden;
-            transition: box-shadow 0.2s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .dp-card:hover {
-            box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-color: #DBEAFE;
         }
         .dp-card-top {
             display: flex;
@@ -572,9 +637,14 @@ def get_global_css() -> str:
         .about-card {
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 2rem;
             text-align: center;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .about-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
         }
         .about-card h3 {
             font-size: 1.1rem;
@@ -601,14 +671,31 @@ def get_global_css() -> str:
             text-align: center;
             color: #94A3B8;
             font-size: 0.78rem;
-            padding: 2rem 0 1rem 0;
+            padding: 2.5rem 0 1.5rem 0;
             border-top: 1px solid #E2E8F0;
             margin-top: 3rem;
+            background: linear-gradient(180deg, transparent, rgba(248,250,252,0.5));
         }
 
         /* ── Utility ── */
         .spacer { height: 1rem; }
         .spacer-lg { height: 2rem; }
+
+        /* ── Smooth selection color ── */
+        ::selection {
+            background: rgba(0,102,204,0.15);
+            color: #1A1A2E;
+        }
+
+        /* ── Responsive refinements ── */
+        @media (max-width: 768px) {
+            .hero-container { padding: 2.5rem 1.5rem; }
+            .hero-title { font-size: 2rem; }
+            .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+            .profile-hero { padding: 2rem 1.5rem; }
+            .profile-name { font-size: 1.8rem; }
+            .contact-items { flex-direction: column; align-items: center; }
+        }
 
         /* Hide Streamlit default elements for cleaner look */
         #MainMenu { visibility: hidden; }
