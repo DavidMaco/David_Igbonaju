@@ -435,10 +435,13 @@
     score-based supplier allocation. Scenario analysis performs sensitivity modeling.
     Outputs flow to JSON, CSV, and executive reports.
   stack:
-    - Python 3.10+
+    - Python 3.11+
+    - Streamlit
+    - Plotly
     - SQLite
-    - pandas
-    - pytest
+    - pandas / NumPy
+    - SciPy (optimization)
+    - pytest (28 tests)
     - GitHub Actions CI
   key_features:
     - "Five decision domains: spend visibility, supplier performance, price variance, maverick buying, FX exposure"
@@ -453,21 +456,25 @@
     suppliers: "40"
     purchase_orders: "2,500"
   repo_url: "https://github.com/DavidMaco/Procurement_Spend_Analysis"
-  demo_url: ""
+  demo_url: "https://procurementspendanalysis.streamlit.app/"
   dashboard_pages:
-    - page: "Spend Visibility Dashboard"
-      icon: "💰"
-      description: "Category spend breakdown, supplier concentration HHI, period-over-period trend, and top spend drivers across ₦310.39B in analyzed procurement data."
-      key_metrics: ["₦310.39B Total", "Top Category %", "HHI Index", "Trend Direction"]
-    - page: "Savings Opportunity Map"
+    - page: "Executive Overview"
+      icon: "📊"
+      description: "High-level KPI strip, spend-by-category bar chart, top-20 KPI table, monthly trend line, and one-click Power BI export."
+      key_metrics: ["₦310.4B Spend", "40 Suppliers", "₦185.9B Savings", "13.1% Maverick"]
+    - page: "Supplier Performance"
+      icon: "🏭"
+      description: "Supplier scorecard table, on-time delivery scatter plot, grade distribution histogram, and top-15 performers bar chart."
+      key_metrics: ["OTD %", "Quality Score", "Grade Distribution", "Top 15 Rank"]
+    - page: "Savings Opportunities"
       icon: "🎯"
-      description: "₦185.92B in identified savings decomposed across price standardization (₦18.45B), supplier performance (₦167.47B), and maverick buying (₦40.61B)."
-      key_metrics: ["₦185.92B Savings", "Price Gap %", "Perf. Gap %", "Maverick %"]
-    - page: "Supplier Optimization"
-      icon: "🏆"
-      description: "Score-based allocation model ranking 40 suppliers across OTIF, quality, price competitiveness, and risk with optimal spend reallocation recommendations."
-      key_metrics: ["Top Supplier Score", "Allocation Shift", "Risk-Adjusted Rank", "40 Suppliers"]
-    - page: "Scenario Analysis"
-      icon: "⚡"
-      description: "Conservative, base, and aggressive savings scenarios with sensitivity modeling, assumption documentation, and executive narrative report in Markdown/HTML/PDF."
-      key_metrics: ["Conservative", "Base Case", "Aggressive", "Confidence Band"]
+      description: "Price variance analysis, score-based supplier optimization recommendations, constrained allocation plan, and scenario summary."
+      key_metrics: ["₦185.9B Savings", "Price Gap", "Constrained Plan", "Scenario Band"]
+    - page: "Risk & Uncertainty"
+      icon: "⚠️"
+      description: "Maverick spend breakdown, dual-column risk KPIs, and Monte Carlo simulation uncertainty bounds table."
+      key_metrics: ["₦40.6B Maverick", "Risk KPIs", "Monte Carlo Bounds", "Confidence %"]
+    - page: "Data Hub"
+      icon: "🗄️"
+      description: "Quality incident reports, schema reference, Power BI download pack, and raw data table preview for all pipeline outputs."
+      key_metrics: ["Quality Report", "Schema Ref", "Power BI Pack", "Raw Tables"]
